@@ -1,0 +1,193 @@
+.feature {
+  padding-top: 8.125rem;
+  padding-bottom: 6.25rem;
+  &-wrapper {
+    display: grid;
+    gap: 1.875rem;
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-boxes {
+    display: grid;
+    gap: 1.875rem;
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-box {
+    transition: 300ms ease-in-out;
+    cursor: normal;
+    perspective: 1000px;
+
+    .hover-layer {
+      transform-style: preserve-3d;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    &:first-child:hover .hover-layer {
+      background-color: #5752d0;
+      box-shadow: 0px 3px 10px rgba(156, 106, 222, 0.3);
+    }
+
+    &:nth-child(2):hover .hover-layer {
+      background-color: #de3618;
+    }
+
+    &:nth-child(3):hover .hover-layer {
+      background-color: #9c6ade;
+    }
+
+    &:last-child:hover .hover-layer {
+      background-color: #47c1bf;
+    }
+
+    &:nth-child(even) {
+      // margin-top: -60px;
+      @include breakpoint-up(large) {
+        transform: translateY(-60px);
+      }
+    }
+
+    &:hover .hover-layer {
+      color: white !important;
+    }
+
+    &:hover .box-description {
+      height: 44px;
+    }
+
+    &:hover .box-icon {
+      color: white !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    &:hover .box-title {
+      color: white !important;
+    }
+    &:hover .hover-container .box-btn {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .hover-container {
+      padding: 2.5rem 1.875rem 2.1875rem;
+      display: flex;
+      flex-direction: column;
+
+      .box {
+        &-title {
+          font-size: 1.125rem;
+          color: #222;
+          margin-bottom: 5px;
+          font-weight: 500;
+          transition: 200ms ease-in-out;
+        }
+
+        &-description {
+          min-height: 44px;
+          font-size: 0.875rem;
+          font-weight: 200;
+          line-height: 1.6;
+          transition: 200ms ease-in-out;
+
+          @include breakpoint-up(large) {
+            min-height: 88px;
+          }
+        }
+
+        &-btn {
+          opacity: 0;
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          transform: translateY(100%);
+          transition: 300ms ease-in-out;
+          a {
+            color: white;
+          }
+
+          span {
+            margin-top: 3px;
+            color: white;
+            transition: 300ms ease-in-out;
+          }
+          &:hover span {
+            margin-left: 5px;
+          }
+        }
+        &-icon {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 15px;
+          border-radius: 50%;
+          transition: 300ms ease-in-out;
+
+          &-first {
+            color: #5752d0;
+            background-color: rgba(87, 82, 208, 0.1);
+          }
+
+          &-second {
+            background-color: rgba(222, 54, 24, 0.1);
+            color: #de3618;
+          }
+
+          &-third {
+            background-color: rgba(156, 106, 222, 0.1);
+            color: #9c6ade;
+          }
+
+          &-fourth {
+            background-color: rgba(71, 193, 191, 0.1);
+            color: #47c1bf;
+          }
+        }
+      }
+    }
+  }
+
+  &-text {
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include breakpoint-up(large) {
+      padding-top: 40px;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .para {
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .btn-cta {
+      color: #5c6ac4 !important;
+      display: inline-block;
+      margin-top: 25px;
+      background-color: rgba(92, 106, 196, 0.1) !important;
+      border: 1px solid #eaeaea;
+      min-width: 150px;
+      padding: 0.7em 2.1em;
+      transition: 300ms ease-in-out;
+
+      &:hover {
+        background-color: #5c6ac4 !important;
+        color: white !important;
+        transform: translateY(-2px);
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
