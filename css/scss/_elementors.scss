@@ -92,14 +92,14 @@
         }
 
         &-description {
-          min-height: 44px;
+          height: 90px;
           font-size: 0.875rem;
           font-weight: 200;
           line-height: 1.6;
           transition: 200ms ease-in-out;
 
           @include breakpoint-up(large) {
-            min-height: 88px;
+            height: 90px;
           }
         }
 
